@@ -1,0 +1,28 @@
+<table>
+  <thead>
+  <tr>
+    <th>NPI</th>
+    <th>Name</th>
+    <th>Address</th>
+    <th>Type</th>
+    <th>Taxonomy</th>
+  </tr>
+  </thead>
+  <tbody>
+  <% @npi_records.each do |npi_record| %>
+    <tr>
+      <td><%= npi_record.number %></td>
+      <td><%=  npi_record.basic_datum.name %></td>
+      <td><%= npi_record.addresses.find_by(address_purpose: 'LOCATION').to_s %></td>
+      <td><%= npi_record.basic_datum.credential %></td>
+      <td><%= npi_record.taxonomies.take.to_s  %></td>
+    </tr>
+  <% end %>
+  </tbody>
+</table>
+<div>
+  <%= form_for :index, url: "/npi_records" do |form| %>
+    <%= form.text_field :number %>
+    <%= form.submit  %>
+  <% end %>
+</div>

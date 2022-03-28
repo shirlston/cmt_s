@@ -1,0 +1,2 @@
+module NpiRecordsHelper
+end

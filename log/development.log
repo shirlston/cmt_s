@@ -1,0 +1,91 @@
+
+Started POST "/npi_records" for 127.0.0.1 at 2022-03-28 14:17:03 -0400
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  
+ActionController::RoutingError (No route matches [POST] "/npi_records"):
+  
+Started GET "/npi_records" for 127.0.0.1 at 2022-03-28 14:17:04 -0400
+Processing by NpiRecordsController#index as HTML
+  [1m[36mNpiRecord Load (0.2ms)[0m  [1m[34mSELECT "npi_records".* FROM "npi_records"[0m
+  ↳ app/controllers/npi_records_controller.rb:3:in `index'
+  Rendering layout layouts/application.html.erb
+  Rendering npi_records/index.html.erb within layouts/application
+  [1m[36mNpiRecord Load (0.1ms)[0m  [1m[34mSELECT "npi_records".* FROM "npi_records" ORDER BY ordinal_position DESC[0m
+  ↳ app/views/npi_records/index.html.erb:12
+  [1m[36mBasicDatum Load (0.2ms)[0m  [1m[34mSELECT "basic_data".* FROM "basic_data" WHERE "basic_data"."npi_record_id" = ? LIMIT ?[0m  [["npi_record_id", 2], ["LIMIT", 1]]
+  ↳ app/views/npi_records/index.html.erb:15
+  [1m[36mAddress Load (0.1ms)[0m  [1m[34mSELECT "addresses".* FROM "addresses" WHERE "addresses"."npi_record_id" = ? AND "addresses"."address_purpose" = ? LIMIT ?[0m  [["npi_record_id", 2], ["address_purpose", "LOCATION"], ["LIMIT", 1]]
+  ↳ app/views/npi_records/index.html.erb:16
+  [1m[36mTaxonomy Load (0.2ms)[0m  [1m[34mSELECT "taxonomies".* FROM "taxonomies" WHERE "taxonomies"."npi_record_id" = ? LIMIT ?[0m  [["npi_record_id", 2], ["LIMIT", 1]]
+  ↳ app/views/npi_records/index.html.erb:18
+  [1m[36mBasicDatum Load (0.0ms)[0m  [1m[34mSELECT "basic_data".* FROM "basic_data" WHERE "basic_data"."npi_record_id" = ? LIMIT ?[0m  [["npi_record_id", 1], ["LIMIT", 1]]
+  ↳ app/views/npi_records/index.html.erb:15
+  [1m[36mAddress Load (0.0ms)[0m  [1m[34mSELECT "addresses".* FROM "addresses" WHERE "addresses"."npi_record_id" = ? AND "addresses"."address_purpose" = ? LIMIT ?[0m  [["npi_record_id", 1], ["address_purpose", "LOCATION"], ["LIMIT", 1]]
+  ↳ app/views/npi_records/index.html.erb:16
+  [1m[36mTaxonomy Load (0.0ms)[0m  [1m[34mSELECT "taxonomies".* FROM "taxonomies" WHERE "taxonomies"."npi_record_id" = ? LIMIT ?[0m  [["npi_record_id", 1], ["LIMIT", 1]]
+  ↳ app/views/npi_records/index.html.erb:18
+  [1m[36mBasicDatum Load (0.0ms)[0m  [1m[34mSELECT "basic_data".* FROM "basic_data" WHERE "basic_data"."npi_record_id" = ? LIMIT ?[0m  [["npi_record_id", 3], ["LIMIT", 1]]
+  ↳ app/views/npi_records/index.html.erb:15
+  [1m[36mAddress Load (0.0ms)[0m  [1m[34mSELECT "addresses".* FROM "addresses" WHERE "addresses"."npi_record_id" = ? AND "addresses"."address_purpose" = ? LIMIT ?[0m  [["npi_record_id", 3], ["address_purpose", "LOCATION"], ["LIMIT", 1]]
+  ↳ app/views/npi_records/index.html.erb:16
+  [1m[36mTaxonomy Load (0.0ms)[0m  [1m[34mSELECT "taxonomies".* FROM "taxonomies" WHERE "taxonomies"."npi_record_id" = ? LIMIT ?[0m  [["npi_record_id", 3], ["LIMIT", 1]]
+  ↳ app/views/npi_records/index.html.erb:18
+  [1m[36mBasicDatum Load (0.0ms)[0m  [1m[34mSELECT "basic_data".* FROM "basic_data" WHERE "basic_data"."npi_record_id" = ? LIMIT ?[0m  [["npi_record_id", 4], ["LIMIT", 1]]
+  ↳ app/views/npi_records/index.html.erb:15
+  [1m[36mAddress Load (0.0ms)[0m  [1m[34mSELECT "addresses".* FROM "addresses" WHERE "addresses"."npi_record_id" = ? AND "addresses"."address_purpose" = ? LIMIT ?[0m  [["npi_record_id", 4], ["address_purpose", "LOCATION"], ["LIMIT", 1]]
+  ↳ app/views/npi_records/index.html.erb:16
+  [1m[36mTaxonomy Load (0.0ms)[0m  [1m[34mSELECT "taxonomies".* FROM "taxonomies" WHERE "taxonomies"."npi_record_id" = ? LIMIT ?[0m  [["npi_record_id", 4], ["LIMIT", 1]]
+  ↳ app/views/npi_records/index.html.erb:18
+  Rendered npi_records/index.html.erb within layouts/application (Duration: 30.2ms | Allocations: 47221)
+  Rendered layout layouts/application.html.erb (Duration: 66.7ms | Allocations: 82338)
+Completed 200 OK in 79ms (Views: 66.2ms | ActiveRecord: 1.8ms | Allocations: 100370)
+
+
+Started GET "/npi_records" for 127.0.0.1 at 2022-03-28 14:27:35 -0400
+  [1m[35m (5.7ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by NpiRecordsController#index as HTML
+  [1m[36mNpiRecord Load (0.3ms)[0m  [1m[34mSELECT "npi_records".* FROM "npi_records"[0m
+  ↳ app/controllers/npi_records_controller.rb:3:in `index'
+  Rendering layout layouts/application.html.erb
+  Rendering npi_records/index.html.erb within layouts/application
+  [1m[36mNpiRecord Load (0.1ms)[0m  [1m[34mSELECT "npi_records".* FROM "npi_records" ORDER BY ordinal_position DESC[0m
+  ↳ app/views/npi_records/index.html.erb:12
+  [1m[36mBasicDatum Load (0.2ms)[0m  [1m[34mSELECT "basic_data".* FROM "basic_data" WHERE "basic_data"."npi_record_id" = ? LIMIT ?[0m  [["npi_record_id", 2], ["LIMIT", 1]]
+  ↳ app/views/npi_records/index.html.erb:15
+  [1m[36mAddress Load (0.1ms)[0m  [1m[34mSELECT "addresses".* FROM "addresses" WHERE "addresses"."npi_record_id" = ? AND "addresses"."address_purpose" = ? LIMIT ?[0m  [["npi_record_id", 2], ["address_purpose", "LOCATION"], ["LIMIT", 1]]
+  ↳ app/views/npi_records/index.html.erb:16
+  [1m[36mTaxonomy Load (0.2ms)[0m  [1m[34mSELECT "taxonomies".* FROM "taxonomies" WHERE "taxonomies"."npi_record_id" = ? LIMIT ?[0m  [["npi_record_id", 2], ["LIMIT", 1]]
+  ↳ app/views/npi_records/index.html.erb:18
+  [1m[36mBasicDatum Load (0.0ms)[0m  [1m[34mSELECT "basic_data".* FROM "basic_data" WHERE "basic_data"."npi_record_id" = ? LIMIT ?[0m  [["npi_record_id", 1], ["LIMIT", 1]]
+  ↳ app/views/npi_records/index.html.erb:15
+  [1m[36mAddress Load (0.1ms)[0m  [1m[34mSELECT "addresses".* FROM "addresses" WHERE "addresses"."npi_record_id" = ? AND "addresses"."address_purpose" = ? LIMIT ?[0m  [["npi_record_id", 1], ["address_purpose", "LOCATION"], ["LIMIT", 1]]
+  ↳ app/views/npi_records/index.html.erb:16
+  [1m[36mTaxonomy Load (0.0ms)[0m  [1m[34mSELECT "taxonomies".* FROM "taxonomies" WHERE "taxonomies"."npi_record_id" = ? LIMIT ?[0m  [["npi_record_id", 1], ["LIMIT", 1]]
+  ↳ app/views/npi_records/index.html.erb:18
+  [1m[36mBasicDatum Load (0.0ms)[0m  [1m[34mSELECT "basic_data".* FROM "basic_data" WHERE "basic_data"."npi_record_id" = ? LIMIT ?[0m  [["npi_record_id", 3], ["LIMIT", 1]]
+  ↳ app/views/npi_records/index.html.erb:15
+  [1m[36mAddress Load (0.0ms)[0m  [1m[34mSELECT "addresses".* FROM "addresses" WHERE "addresses"."npi_record_id" = ? AND "addresses"."address_purpose" = ? LIMIT ?[0m  [["npi_record_id", 3], ["address_purpose", "LOCATION"], ["LIMIT", 1]]
+  ↳ app/views/npi_records/index.html.erb:16
+  [1m[36mTaxonomy Load (0.0ms)[0m  [1m[34mSELECT "taxonomies".* FROM "taxonomies" WHERE "taxonomies"."npi_record_id" = ? LIMIT ?[0m  [["npi_record_id", 3], ["LIMIT", 1]]
+  ↳ app/views/npi_records/index.html.erb:18
+  [1m[36mBasicDatum Load (0.0ms)[0m  [1m[34mSELECT "basic_data".* FROM "basic_data" WHERE "basic_data"."npi_record_id" = ? LIMIT ?[0m  [["npi_record_id", 4], ["LIMIT", 1]]
+  ↳ app/views/npi_records/index.html.erb:15
+  [1m[36mAddress Load (0.0ms)[0m  [1m[34mSELECT "addresses".* FROM "addresses" WHERE "addresses"."npi_record_id" = ? AND "addresses"."address_purpose" = ? LIMIT ?[0m  [["npi_record_id", 4], ["address_purpose", "LOCATION"], ["LIMIT", 1]]
+  ↳ app/views/npi_records/index.html.erb:16
+  [1m[36mTaxonomy Load (0.0ms)[0m  [1m[34mSELECT "taxonomies".* FROM "taxonomies" WHERE "taxonomies"."npi_record_id" = ? LIMIT ?[0m  [["npi_record_id", 4], ["LIMIT", 1]]
+  ↳ app/views/npi_records/index.html.erb:18
+  Rendered npi_records/index.html.erb within layouts/application (Duration: 30.6ms | Allocations: 47942)
+  Rendered layout layouts/application.html.erb (Duration: 64.5ms | Allocations: 82965)
+Completed 200 OK in 78ms (Views: 64.7ms | ActiveRecord: 2.0ms | Allocations: 102962)
+
+
+Started POST "/npi_records" for 127.0.0.1 at 2022-03-28 14:27:43 -0400
+Processing by NpiRecordsController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "index"=>{"number"=>"1134166440"}, "commit"=>"Save Index"}
+[31mUnpermitted parameters: :authenticity_token, :index, :commit. Context: { controller: NpiRecordsController, action: create, request: #<ActionDispatch::Request:0x000000011ec70078>, params: {"authenticity_token"=>"[FILTERED]", "index"=>{"number"=>"1134166440"}, "commit"=>"Save Index", "controller"=>"npi_records", "action"=>"create"} }[0m
+No template found for NpiRecordsController#create, rendering head :no_content
+Completed 204 No Content in 4ms (ActiveRecord: 0.0ms | Allocations: 907)
+
+

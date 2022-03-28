@@ -1,0 +1,15 @@
+table, th, td {
+    border-style: solid;
+    border-width: 1px;
+    border-collapse: collapse;
+}
+
+table {
+    width: 100%;
+}
+
+body {
+    font-family: "Helvetica Neue", Helvetica, Arial, Sans-Serif;
+}
+
+td { word-break: break-all}
